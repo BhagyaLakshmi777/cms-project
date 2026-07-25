@@ -1,4 +1,4 @@
-import {getAllServices, createService,  updateService,  deleteService } from "../models/ServiceModel.js";
+import {getAllServices, createService,  updateService,  deleteService } from "../models/serviceModel.js";
 
 export const getServices = (req, res) =>{
     getAllServices((err, services) =>{
@@ -15,7 +15,7 @@ export const addService = (req, res) => {
     if (!title || !description) {
         return res.status(400).json({
             message: "Title and description are required"
-        });
+        })
     }
 
     createService(title, description, (err, service) => {
